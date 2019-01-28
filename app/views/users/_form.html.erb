@@ -1,0 +1,41 @@
+<div class="container-fluid w-100 h-100">
+    <%= form_with model: @user, local: true do |form| %>
+        <div class="form-group <%= 'invalid' if @user.errors.has_key?(:fname) %>">
+            <%= form.label :first_name, class: "control-label" %>
+            <%= form.text_field :fname, class: "form-control", placeholder: "Samus"%>
+
+            <% @user.errors.full_messages_for(:fname).each do |message| %>
+                <small class="form-text"> <%= message %> </small>
+            <% end %>
+        </div>
+
+        <div class="form-group <%= 'invalid' if @user.errors.has_key?(:lname) %>">
+            <%= form.label :last_name, class: "control-label" %>
+            <%= form.text_field :lname, class: "form-control", placeholder: "Aran"%>
+
+            <% @user.errors.full_messages_for(:lname).each do |message| %>
+                <small class="form-text"> <%= message %> </small>
+            <% end %>
+        </div>
+
+        <div class="form-group <%= 'invalid' if @user.errors.has_key?(:email) %>">
+            <%= form.label :email, class: "control-label" %>
+            <%= form.text_field :email, class: "form-control", placeholder: "bounty@hunter.com"%>
+
+            <% @user.errors.full_messages_for(:email).each do |message| %>
+                <small class="form-text"> <%= message %> </small>
+            <% end %>
+        </div>
+
+        <div class="form-group <%= 'invalid' if @user.errors.has_key?(:password) %>">
+            <%= form.label :password, class: "control-label" %>
+            <%= form.text_field :password, class: "form-control", placeholder: "6 or more characters"%>
+
+            <% @user.errors.full_messages_for(:password).each do |message| %>
+                <small class="form-text"> <%= message %> </small>
+            <% end %>
+        </div>
+
+        <%= form.submit "Sign Up", class: "btn btn-primary btn-lg btn-round"%>
+    <% end %>
+</div>
