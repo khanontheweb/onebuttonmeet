@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       if session[:user_id].nil?
         session[:user_id] = @user.id
       end
-      redirect to @user #include flash/notice
+      redirect_to @user #include flash/notice
     else
       render 'new'
     end
