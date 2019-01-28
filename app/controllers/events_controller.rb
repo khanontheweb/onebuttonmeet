@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
+  def new
+  end
+  
   def create
   end
 
-  def read
+  def show
   end
 
   def update
@@ -11,6 +14,6 @@ class EventsController < ApplicationController
   def destroy
   end
 
-  def all
+  def index
   end
 end
