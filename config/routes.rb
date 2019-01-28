@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'events/create'
+  get 'events/read'
+  get 'events/update'
+  get 'events/destroy'
+  get 'events/all'
   get 'users/create'
   get 'users/read'
   get 'users/update'
