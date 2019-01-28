@@ -9,6 +9,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
+    if @user.save
+      if session[:user_id].nil?
+        session[:user_id] = @user.id
+      end
+      redirect to @user #include flash/notice
+    else
+      render 'new'
+    end
+
   end
 
   def show
