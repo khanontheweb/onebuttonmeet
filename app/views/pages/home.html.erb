@@ -1,7 +1,6 @@
+<%= stylesheet_link_tag 'pages' %>
 <% if current_user %>
-    Logged in as <%= current_user.email %>
-    <%= link_to "Sign Out", signout_path %>
+    <%redirect_to user_url, current_user%>
 <% else %>
-    <%= link_to "Sign Up", signup_path %>
-    <%= link_to "Sign In", signin_path %>
+    <%= render 'landing' %>
 <% end %>
