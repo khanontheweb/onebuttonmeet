@@ -1,0 +1,21 @@
+<div class="container signup h-100">
+    <%= form_with model: @event, local: true, class:"shadow p-4 border" do |form| %>
+        <h1 class="display-4">Let's Meet!</h1>
+        <div class="form-group <%= 'invalid' if @event.errors.has_key?(:title) %>">
+            <%= form.label :activity, class: "control-label font-weight-bold" %>
+            <%= form.text_field :activity, class: "form-control", placeholder: "Pizza, Drinks, Talk"%>
+
+            <% @event.errors.full_messages_for(:first_name).each do |message| %>
+                <small class="form-text"> <%= message %> </small>
+            <% end %>
+            <% @result = Geocoder.search("172.56.21.89") %>
+            <%= @result.last.coordinates %>
+            <%= form.hidden_field :lat, :value=>@result.last.coordinates.first%>
+            <%= form.hidden_field :lng, :value=>@result.last.coordinates.last %>
+            <%= form.hidden_field :live, :value=>true%>
+            
+        </div>
+
+        <%= form.submit "Broadcast Yourself!", class: "shadow btn btn-primary btn-lg btn-round"%>
+    <% end %>
+</div>

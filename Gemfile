@@ -11,6 +11,9 @@ gem 'bootstrap'
 # Need jquery for bootstrap
 gem 'jquery-rails'
 
+# Get geo location
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record

@@ -1,4 +1,4 @@
-var map, infoWindow;
+var map, infoWindow, pos;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 18,
@@ -10,7 +10,7 @@ function initMap() {
     if(navigator.geolocation) {
 
         navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
