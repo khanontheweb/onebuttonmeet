@@ -1,1 +1,16 @@
-<%= @user.fname %> <%= @user.lname%>
+<div class="container-fluid">
+
+    <div class="row align-items-start"> <!-- BEGIN USER PROFILE ROW -->
+        <%= link_to "Profile", edit_user_path(@user)%>
+    </div>                              <!-- END USER PROFILE ROW -->
+
+    <div class="row align-items-center"> <!-- BEGIN MAP ROW -->
+        <%= render 'map' %>
+    </div>                               <!-- END MAP ROW -->
+    
+
+    <%= javascript_include_tag 'map' %>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADaJ-DvXWnIMGCclj_N2fhIj3z8VPMHmA&callback=initMap">
+    </script>
+</div>
