@@ -6,7 +6,7 @@ function initMap() {
         mapTypeControl: false,
         streetViewControl: false
     });
-
+    infoWindow = new google.maps.infoWindow;
     if(navigator.geolocation) {
 
         navigator.geolocation.getCurrentPosition(function(position) {
