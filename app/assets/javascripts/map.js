@@ -6,7 +6,7 @@ function initMap() {
         mapTypeControl: false,
         streetViewControl: false
     });
-    infoWindow = new google.maps.infoWindow;
+    infoWindow = new google.maps.InfoWindow;
     if(navigator.geolocation) {
 
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -14,14 +14,14 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
+            console.log(pos);
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map
             });
             infoWindow.setPosition(pos);
-            infoWindow.setContent('You are here!');
-            infoWindow.open(map);
+            //infoWindow.setContent('You are here!');
+            //infoWindow.open(map);
             map.setCenter(pos);
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -40,3 +40,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                             'Erro: Browser does not support geolocation.');
     infoWindow.open(map);
 }
+
