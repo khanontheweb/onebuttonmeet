@@ -15,12 +15,14 @@
  @import 'bootstrap';
 
  $error-text: #DC143C;
+ $background-color: #fffafa;
 
  // Top level containers fill the parent
  html, body {
      height: 100%;
      margin: 0;
      padding: 0;
+     background-color: $background-color;
  }
 
  // Button Styling

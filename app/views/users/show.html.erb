@@ -2,8 +2,12 @@
     <div class="row">
         <%= link_to "Profile", edit_user_path(@user)%>
     </div>
-    <div class="row h-100" id="map"></div>
-    <div class="row">
+    <div class="row h-75 border border-dark" id="map"></div>
+    <div class="row justify-content-center">
+        <div class="btn-group-vertical btn-block w-50">
+            <%= link_to "Meetup", new_event_path, class:"btn btn-primary btn-lg btn-round my-4 border border-dark"%>            
+            <%= link_to "See Meetups Now", events_path, class:"btn btn-light btn-lg btn-round border-dark"%>
+        </div>
     </div>
 </div>
 

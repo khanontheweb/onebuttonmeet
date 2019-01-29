@@ -1,5 +1,6 @@
 <div class="container signup h-100">
-    <%= form_with model: @user, local: true do |form| %>
+    <%= form_with model: @user, local: true, class:"shadow p-4 border" do |form| %>
+        <h1 class="display-4">Meet People</h1>
         <div class="form-group <%= 'invalid' if @user.errors.has_key?(:first_name) %>">
             <%= form.label :first_name, class: "control-label font-weight-bold" %>
             <%= form.text_field :first_name, class: "form-control", placeholder: "Samus"%>
@@ -36,6 +37,6 @@
             <% end %>
         </div>
 
-        <%= form.submit "Sign Up", class: "btn btn-primary btn-lg btn-round"%>
+        <%= form.submit "Sign Up", class: "shadow btn btn-primary btn-lg btn-round"%>
     <% end %>
 </div>
